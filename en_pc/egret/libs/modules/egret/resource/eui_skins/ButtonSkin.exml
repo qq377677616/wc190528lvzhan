@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<e:Skin class="skins.ButtonSkin" states="up,down,disabled" minHeight="50" minWidth="100"
+        xmlns:e="http://ns.egret.com/eui">
+    <e:Image id="up" width="100%" height="100%" includeIn="up" source="dft_json.dft_rct_png" />
+    <e:Image id="down" width="100%" height="100%" includeIn="down" source="dft_json.dft_rct_png" />
+    <e:Label id="labelDisplay" width="100%" height="100%" size="20" textColor="0xFFFFFF" verticalAlign="middle"
+             textAlign="center" />
+    <e:Image id="iconDisplay" horizontalCenter="0" verticalCenter="0" />
+</e:Skin>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>绿展集团</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/animate.min.css" />
+  <link rel="stylesheet" href="../css/default.css" />
+  <link href="../images/logo.ico" type="image/x-icon" rel="shortcut icon">
+  <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body style="overflow:hidden;">
+  <div id="ecology" class="body">
+    <div id="head"></div>
+    <div class="content">
+      <div class="stars"></div>
+      <div class="con flex-cen">
+        <div class="box flex-cen">
+          <div class="ball">
+            <dl>
+              <!-- <dd>离岸创新中心</dd>
+              <dd>金融平台</dd>
+              <dd>产业化公司</dd>
+              <dd>国内创新平台</dd> -->
+            </dl>
+          </div>
+          <div class="left hand"><img src="../images/ecology_02.png" alt="" /></div>
+          <div class="right hand"><img src="../images/ecology_03.png" alt="" /></div>
+        </div>
+        <div class="title flex-cen">
+          <!-- <div class="title-box flex-cen"><div class="close"></div><span>硅谷、波士顿、维也纳、特拉维夫（筹备中）、伦敦（筹备中）</span></div>
+          <div class="title-box flex-cen"><div class="close"></div><span>深圳市顺势而为资产管理有限公司</span></div>
+          <div class="title-box flex-cen"><div class="close"></div><span>绿展控股（深圳）有限公司<br/>金迈元生物科技有限公司<br/>珠海市金迈元生物科技有限公司<br/>横琴绿展生物技术有限公司<br/>珠海市酷睿奥人工智能科技有限公司
+</span></div>
+          <div class="title-box flex-cen"><div class="close"></div><span>前海离岸科创产业化平台<br/>佛山工业互联网产业化基地<br/>文创谷<br/>横琴生物科技产业化基地</span></div> -->
+        </div>
+      </div>
+    </div>
+    <div id="footer"></div>    
+  </div>
+  <script src="../js/require.js" data-main="../js/myrequire.js"></script>    
+  <script src='../js/stopExecutionOnTimeout.js'></script>
+  <script>
+  $(document).ready(function () {
+      var stars = 800;
+      var $stars = $('.stars');
+      var r = 800;
+      for (var i = 0; i < stars; i++) {
+          if (window.CP.shouldStopExecution(1)) {
+              break;
+          }
+          var $star = $('<div/>').addClass('star');
+          $stars.append($star);
+      }
+      window.CP.exitedLoop(1);
+      $('.star').each(function () {
+          var cur = $(this);
+          var s = 0.2 + Math.random() * 1;
+          var curR = r + Math.random() * 300;
+          cur.css({
+              transformOrigin: '0 0 ' + curR + 'px',
+              transform: ' translate3d(0,0,-' + curR + 'px) rotateY(' + Math.random() * 360 + 'deg) rotateX(' + Math.random() * -50 + 'deg) scale(' + s + ',' + s + ')'
+          });
+      });
+  });
+
+  </script>
+</body> 
+</html>

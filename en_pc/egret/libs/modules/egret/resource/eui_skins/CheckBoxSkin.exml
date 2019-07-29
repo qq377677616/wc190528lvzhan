@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.CheckBoxSkin" states="up,down,disabled,upAndSelected,downAndSelected,disabledAndSelected"
+        xmlns:e="http://ns.egret.com/eui">
+    <e:Group width="100%" height="100%">
+        <!--<e:layout>
+            <e:HorizontalLayout verticalAlign="middle" />
+        </e:layout>-->
+        <e:Image id="up" width="100%" height="100%" includeIn="up" source="dft_json.dft_rct_png" />
+        <e:Image id="down" width="100%" height="100%" includeIn="down" source="dft_json.dft_rct_png" />
+        <e:Label id="labelDisplay" width="100%" height="100%" size="20" textColor="0xFFFFFF" verticalAlign="middle"
+                 textAlign="center" />
+    </e:Group>
+</e:Skin>

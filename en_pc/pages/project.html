@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" /> 
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <title>GP·GROUP</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/animate.min.css" />
+  <link rel="stylesheet" href="../css/default.css" />
+  <link href="../images/logo.ico" type="image/x-icon" rel="shortcut icon">
+  <script src="../js/jquery-3.3.1.js"></script>
+  <script src="../js/jquery.slimscroll.js"></script>
+</head>
+<body>
+  <div id="project" class="body">
+    <div id="head" class="white"></div>
+    <div class="content">
+      <div class="con" id="slimscroll">
+        <h2>The Commercialization Process of a<br/>Japanese Peptide Company</h2>
+        <ul>
+          <li>
+            <dl>
+              <dd>
+                <div class="img"><div class="img-box"></div><span></span></div>
+                <div class="text">
+                  <h3>May 2018</h3>
+                  <p>SPV registered.<br/>Set up office and lab in Zhuhai.<br/>Completed key hires:lab assistants,marketing and sales team,product develpment team,etc.</p>
+                </div>
+              </dd>
+              <dd>
+                <div class="img"><div class="img-box"></div><span></span></div>
+                <div class="text">
+                  <h3>July 2018</h3>
+                  <p>Co-organized an event with Macau government with donation of 10000 boxes to Mainland China to support“Senior Care”initiative by Ministry of Civil Affairs.<br/>The event was widely covered by major media.</p>
+                </div>
+              </dd>
+              <dd>
+                <div class="img"><div class="img-box"></div><span></span></div>
+                <div class="text">
+                  <h3>Sep-Nov 2018</h3>
+                  <p>Cooperated with hospitals as a maternity and senior recovery health supplement.</p>
+                </div>
+              </dd>
+              <dd>
+                <div class="img"><div class="img-box"></div><span></span></div>
+                <div class="text">
+                  <h3>Dec.2018-Feb2019</h3>
+                  <p>Ongoing effort to extend market reach and increase production capacity.<br/>Already in profit.</p>
+                </div>
+              </dd>
+            </dl>
+          </li>
+          <li>
+            <dl>
+              <dd>
+                <div class="img"><div class="img-box"></div><span></span></div>
+                <div class="text">
+                  <h3>April 2018</h3>
+                  <p>Initial diligence and China Market validation.<br/>Assisted the founder to obtain China`s national-level talent program grants of ¥2M individual grant and ¥10M project grant.</p>
+                </div>
+              </dd>
+              <dd>
+                <div class="img"><div class="img-box"></div><span></span></div>
+                <div class="text">  
+                  <h3>June 2018</h3>
+                  <p>Production facility set up in Macau.<br/>Food production permit in Macau and import permit to China issued.<br/>First batch of”made in Macau”products packaged.</p>
+                </div>
+              </dd>
+              <dd>
+                <div class="img"><div class="img-box"></div><span></span></div>
+                <div class="text">
+                  <h3>August 2018</h3>
+                  <p>Key contracts signed with major pharmacy and supermarkets in Hong Kong and Macau,and distributors in China.</p>
+                </div>  
+              </dd>
+              <dd>
+                <div class="img"><div class="img-box"></div><span></span></div>
+                <div class="text">
+                  <h3>Nov.2018</h3>
+                  <p>Invited and sponsored by the Macau government to exhibit at the first China International Import Expo in Shanghai.</p>
+                </div>  
+              </dd> 
+            </dl>
+          </li>
+        </ul>
+      </div> 
+    </div>
+    <div id="footer"></div>
+    <iframe src="" id="iframes" name="iframes" frameborder="0"></iframe>
+  </div>
+  <script src="../js/require.js" data-main="../js/myrequire.js"></script>    
+  <script type="text/javascript">
+  // $(function(){
+    $("#slimscroll").slimScroll({
+      width: 'auto', //可滚动区域宽度
+      //height: 'calc(100vh - 147px)', //可滚动区域高度
+      height: '100vh', //可滚动区域高度
+      size: '2px', //组件宽度
+      color: '#272822', //滚动条颜色
+      position: 'right', //组件位置：left/right
+      distance: '13px', //组件与侧边之间的距离
+      start: 'top', //默认滚动位置：top/bottom
+      opacity: 1, //滚动条透明度
+      alwaysVisible: true, //是否 始终显示组件
+      disableFadeOut: false, //是否 鼠标经过可滚动区域时显示组件，离开时隐藏组件
+      railVisible: true, //是否 显示轨道
+      railColor: '#B9B9B9', //轨道颜色
+      railOpacity: 1, //轨道透明度
+      railDraggable: true, //是否 滚动条可拖动
+      railClass: 'slimScrollRail', //轨道div类名 
+      barClass: 'slimScrollBar', //滚动条div类名
+      wrapperClass: 'slimScrollDiv', //外包div类名
+      allowPageScroll: true, //是否 使用滚轮到达顶端/底端时，滚动窗口
+      wheelStep: 60, //滚轮滚动量
+      touchScrollStep: 200, //滚动量当用户使用手势
+      borderRadius: '7px', //滚动条圆角
+      railBorderRadius: '7px' //轨道圆角
+    });
+    $("#iframes").attr("src", "./team.html");
+  // })
+  </script>
+</body> 
+</html>

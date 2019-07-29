@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.ShareUI" width="750" height="1334" xmlns:e="http://ns.egret.com/eui"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Rect id="bg" fillAlpha="0.75" width="26.68" height="26.68" x="750" y="0" anchorOffsetX="13.34" anchorOffsetY="13.34"
+	        scaleX="120" scaleY="120" ellipseWidth="2668" />
+	<e:Group width="750" x="0" height="1334" y="0" name="scaleGroup">
+		<ns1:BaseImage id="ico" scaleX="1" scaleY="1" source="share_ico_png" x="370" y="20" />
+	</e:Group>
+</e:Skin>

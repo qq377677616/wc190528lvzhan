@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.IndexUI" width="1920" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing"
+        xmlns:tween="egret.tween.*" xmlns:ns1="*" height="1080">
+	<e:Image source="loading_bg_jpg" left="0" right="0" top="0" bottom="0" visible="false" />
+	<e:Rect fillColor="0x444444" alpha="1" fillAlpha="0"  left="0" right="0" top="0" bottom="0" width="1920"/>
+	<e:Scroller id="mScroller" left="0" right="0" top="0" bottom="0" width="1920">
+		<e:Group id="group">
+			<e:Group width="231" height="231" y="415.91">
+				<e:Group id="group1" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+					<e:Image id="point1" x="112.91" y="116.45" scaleX="0.8" scaleY="0.8" anchorOffsetX="140.91"
+					         anchorOffsetY="145.45"  source="4_png"/>
+					<ns1:BitmapMovie id="quan1" sourceName="quan_" sourceTotal="26" sourceType="png" x="112.99" y="115.69" scaleX="0.8"
+					                 scaleY="0.8" anchorOffsetX="146.97" anchorOffsetY="150" source="quan_1_png" />
+					<e:Rect id="mouseTouch1" width="231" height="231" fillAlpha="0" />
+				</e:Group>
+				<e:Image id="name1" y="263" horizontalCenter="0" x="3471" scaleX="1" scaleY="1" source="name_8_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group2" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+					<e:Image id="point2" x="116.45" y="113.91" scaleX="0.8" scaleY="0.8" anchorOffsetX="145.45"
+					         anchorOffsetY="140.91"  source="3_png"/>
+					<ns1:BitmapMovie id="quan2" sourceName="quan_" sourceTotal="26" sourceType="png" x="114.32" y="119.68" scaleX="0.8"
+					                 scaleY="0.8" anchorOffsetX="148.48" anchorOffsetY="153.03" source="quan_1_png" />
+					<e:Rect id="mouseTouch2" width="231" height="231" fillAlpha="0" />
+				</e:Group>
+				<e:Image id="name2" y="263" horizontalCenter="0"  source="name_7_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group3" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+					<e:Image id="point3" x="114.15" y="115.15" scaleX="0.8" scaleY="0.8" anchorOffsetX="140.67"
+					         anchorOffsetY="142.67"  source="7_png"/>
+					<ns1:BitmapMovie id="quan3" sourceName="quan_" sourceTotal="26" sourceType="png" x="117.26" y="116.94"
+					                 anchorOffsetX="149.33" anchorOffsetY="150.67" scaleX="0.8" scaleY="0.8" source="quan_1_png"
+					                 />
+					<e:Rect id="mouseTouch3" width="231" height="231" fillAlpha="0"  visible="false"/>
+				</e:Group>
+				<e:Image id="name3" y="263" horizontalCenter="0"  source="name_6_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group4" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+					<e:Image id="point4" x="113" y="117" scaleX="0.8" scaleY="0.8" anchorOffsetX="140"
+					         anchorOffsetY="144"  source="6_png"/>
+					<ns1:BitmapMovie id="quan4" sourceName="quan_" sourceTotal="26" sourceType="png" x="114.64" y="116.97" scaleX="0.8"
+					                 scaleY="0.8" anchorOffsetX="148.67" anchorOffsetY="150" source="quan_1_png"  visible="false"/>
+					<e:Rect id="mouseTouch4" width="231" height="231" fillAlpha="0" />
+				</e:Group>
+				<e:Image id="name4" y="263" horizontalCenter="0"  source="name_3_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group5" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+					<e:Image id="point5" x="113.67" y="111.67" scaleX="0.8" scaleY="0.8" anchorOffsetX="142.67"
+					         anchorOffsetY="140.67"  source="10_png"/>
+					<ns1:BitmapMovie id="quan5" sourceName="quan_" sourceTotal="26" sourceType="png" x="115.64" y="112.63" scaleX="0.8"
+					                 scaleY="0.8" anchorOffsetX="150.67" anchorOffsetY="148" source="quan_1_png"  visible="false"/>
+					<e:Rect id="mouseTouch5" width="231" height="231" fillAlpha="0" />
+				</e:Group>
+				<e:Image id="name5" y="263" horizontalCenter="0" x="-2304" scaleX="1" scaleY="1" source="name_10_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group6" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+					<e:Image id="point6" x="114.67" y="114.67" scaleX="0.8" scaleY="0.8" anchorOffsetX="142.67"
+					         anchorOffsetY="142.67"  source="8_png"/>
+					<ns1:BitmapMovie id="quan6" sourceName="quan_" sourceTotal="26" sourceType="png" x="114.64" y="117.64" scaleX="0.8"
+					                 scaleY="0.8" anchorOffsetX="148.67" anchorOffsetY="152" source="quan_1_png"  visible="false"/>
+					<e:Rect id="mouseTouch6" width="231" height="231" fillAlpha="0" />
+				</e:Group>
+				<e:Image id="name6" y="263" horizontalCenter="0"  source="name_2_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group7" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+				<e:Image id="point7" x="114.67" y="114.67" scaleX="0.8" scaleY="0.8" anchorOffsetX="142.67" anchorOffsetY="142.67" source="2_png"/>
+				<ns1:BitmapMovie id="quan7" sourceName="quan_" sourceTotal="26" sourceType="png" x="114.64" y="117.64" scaleX="0.8" scaleY="0.8" anchorOffsetX="148.67" anchorOffsetY="152" source="quan_1_png" visible="false"/>
+				<e:Rect id="mouseTouch7" width="231" height="231" fillAlpha="0"/>
+				</e:Group>
+				<e:Image id="name7" y="263" horizontalCenter="0" source="name_1_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group8" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+					<e:Image id="point8" x="114.33" y="116.33" scaleX="0.8" scaleY="0.8" anchorOffsetX="141.33"
+					         anchorOffsetY="143.33"  source="5_png"/>
+					<ns1:BitmapMovie id="quan8" sourceName="quan_" sourceTotal="26" sourceType="png" x="114.97" y="116.97" scaleX="0.8"
+					                 scaleY="0.8" anchorOffsetX="148" anchorOffsetY="150" source="quan_1_png"  visible="false"/>
+					<e:Rect id="mouseTouch8" width="231" height="231" fillAlpha="0" />
+				</e:Group>
+				<e:Image id="name8" y="263" horizontalCenter="0" x="30" scaleX="1" scaleY="1" source="name_5_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group9" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+				<e:Image id="point9" x="114.33" y="116.33" scaleX="0.8" scaleY="0.8" anchorOffsetX="141.33" anchorOffsetY="143.33" source="1_png"/>
+				<ns1:BitmapMovie id="quan9" sourceName="quan_" sourceTotal="26" sourceType="png" x="114.97" y="116.97" scaleX="0.8" scaleY="0.8" anchorOffsetX="148" anchorOffsetY="150" source="quan_1_png" visible="false"/>
+				<e:Rect id="mouseTouch9" width="231" height="231" fillAlpha="0"/>
+				</e:Group>
+				<e:Image id="name9" y="263" horizontalCenter="0" x="30" scaleX="1" scaleY="1" source="name_4_png"/>
+			</e:Group>
+			<e:Group width="231" height="231" y="423.67">
+				<e:Group id="group10" touchChildren="false" width="100%" height="100%" anchorOffsetX="115" anchorOffsetY="114" x="115">
+				<e:Image id="point10" x="114.33" y="116.33" scaleX="0.8" scaleY="0.8" anchorOffsetX="141.33" anchorOffsetY="143.33" source="9_png"/>
+				<ns1:BitmapMovie id="quan10" sourceName="quan_" sourceTotal="26" sourceType="png" x="114.97" y="116.97" scaleX="0.8" scaleY="0.8" anchorOffsetX="148" anchorOffsetY="150" source="quan_1_png"/>
+				<e:Rect id="mouseTouch10" width="231" height="231" fillAlpha="0"/>
+				</e:Group>
+				<e:Image id="name10" y="263" horizontalCenter="0" x="30" scaleX="1" scaleY="1" source="name_9_png"/>
+			</e:Group>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" gap="350" paddingLeft="265"  verticalAlign="middle" paddingTop="0" paddingRight="231"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>
+<!-- 2 1 7 8 6 3 4 -->

@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="full-screen" content="true" />
+	<meta name="screen-orientation" content="portrait" />
+	<meta name="x5-fullscreen" content="true" />
+	<meta name="x5-orientation" content="portrait">
+	<meta name="360-fullscreen" content="true" />
+	<style type="text/css">html, body{background: none !important;cursor: pointer;}#egretDiv{overflow: hidden;-ms-user-select:none;-webkit-user-select:none;user-select:none;}</style>
+</head>
+
+<body>
+	<!--x5-video-player-fullscreen="false"-->
+	<!-- 默认视频标签,cdn自动匹配加载，需要赋值的src地址请写在src-path后 如 src-path="resource/assets/video.mp4" -->
+	<!--<video id="mainVideo" class="abs-pos video-main" src-path="resource/assets/videoP.mp4" playsinline webkit-playsinline x5-playsinline
+		x5-video-player-type="" x5-video-orientation="portrait" x5-video-player-fullscreen="true"></video>-->
+
+	<!-- 二维码img标签 cdn自动匹配加载，需要赋值的src地址请写在src-path后 如 src-path="resource/assets/ewm.png" -->
+	<!--<img id="ewmImg" class="abs-pos img-ewm" src-path="resource/assets/ewm.png" />-->
+	<!-- 默认背景img标签 cdn自动匹配加载，需要赋值的src地址请写在src-path后 如 src-path="resource/assets/default.jpg" web-path为网络配置资源地址-->
+	<!--<img id="dftImg" class="abs-pos img-default" web-path="resource/assets/loading/loading_bg.jpg" />-->
+	<!-- 音乐图标img标签 cdn自动匹配加载，需要赋值的src地址请写在src-path后 如 src-path="resource/assets/ewm.png" -->
+	<!--<img id="bgmImg" class="abs-pos img-click" src-path="resource/assets/ewm.png" />-->
+
+	<!-- 默认背景音乐 cdn自动匹配加载，需要赋值的src地址请写在src-path后 如 src-path="resource/assets/music.mp3" web-path为网络配置资源地址-->
+	<audio id="bgm" class="abs-pos" web-path=""></audio>
+	<!-- 默认按钮音效 cdn自动匹配加载，需要赋值的src地址请写在src-path后 如 src-path="resource/assets/btn_1.mp3" web-path为网络配置资源地址-->
+	<!--<audio id="btn" class="abs-pos" src-path="" web-path="resource/assets/btn_1.mp3"></audio>-->
+	<!-- 基础逻辑模块  -->
+	<script async="false">
+		console.log(1);
+		// window.egretCanvasWidth = 1920;
+		// window.egretCanvasHeight = 1080;
+
+		window.egretOrientation = "landscape";
+		window.egretAdaptTactics = 4;
+		//判断是否是PC
+		window.isPC = (function () {
+			//app = navigator.appVersion;
+			var u = window.navigator.userAgent;
+			u = u.toLowerCase();
+			var isIPad = u.match(/ipad/i) == "ipad";
+			var isIos = u.match(/iphone os/i) == "iphone os";
+			var isMidp = u.match(/midp/i) == "midp";
+			var isUC7 = u.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+			var isUC = u.match(/ucweb/i) == "ucweb";
+			var isAndroid = u.match(/android/i) == "android";
+			var isWinCE = u.match(/windows ce/i) == "windows ce";
+			var isMobile = u.match(/windows mobile/i) == "windows mobile";
+			return !(isIPad || isIos || isMidp || isUC7 || isUC || isAndroid || isWinCE || isMobile);
+		})();
+
+		//创建白鹭div showAll noScale noBorder exactFit fixedWidth fixedHeight fixedNarrow fixedWide
+		var egretDiv = (function () {
+			var b = document.body;
+			window.windowIsPortrait = b.clientWidth < b.clientHeight;
+			var egretIsPortrait = window.egretIsPortrait = window.egretOrientation == "portrait";
+			var dataScaleMode;
+			switch (window.egretAdaptTactics) {
+				case 0:
+					window.egretShortSide = 640;
+					window.egretLongSide = 1136;
+					dataScaleMode = window.windowIsPortrait ? egretIsPortrait ? "fixedNarrow" : "fixedNarrow" : "fixedNarrow";
+					break;
+				case 3:
+					window.egretShortSide = 750;
+					window.egretLongSide = 1994;
+					dataScaleMode = window.windowIsPortrait ? egretIsPortrait ? "fixedWidth" : "fixedHeight" : "noBorder";
+					break;
+				case 4:
+					window.egretShortSide = 1080;
+					window.egretLongSide = 1920;
+					dataScaleMode = "fixedWidth";
+					break;
+				default:
+					window.egretShortSide = 750;
+					window.egretLongSide = 1334;
+					dataScaleMode = window.windowIsPortrait ? egretIsPortrait ? "fixedWidth" : "fixedHeight" : "showAll";
+					break;
+			}
+			if (egretIsPortrait) {
+				window.egretWidth = window.egretShortSide;
+				window.egretHeight = window.egretLongSide;
+			}
+			else {
+				window.egretWidth = window.egretLongSide;
+				window.egretHeight = window.egretShortSide;
+			}
+			console.log(100);
+			var egretDiv = document.createElement("div");
+			egretDiv.id = "egretDiv";
+			egretDiv.className = "egret-player";
+			egretDiv.setAttribute("data-entry-class", "Main");
+			egretDiv.setAttribute("data-content-width", window.egretWidth);
+			egretDiv.setAttribute("data-content-height", window.egretHeight);
+			egretDiv.setAttribute("data-frame-rate", "60");
+			egretDiv.setAttribute("data-orientation", window.isPC ? "fixedWidth" : window.egretOrientation);
+			egretDiv.setAttribute("data-scale-mode", dataScaleMode);
+			egretDiv.setAttribute("data-multi-fingered", "1");
+			egretDiv.setAttribute("data-show-paint-rect", "false");
+			egretDiv.setAttribute("data-show-log", "false");
+			egretDiv.setAttribute("data-show-fps", "false");
+			egretDiv.setAttribute("data-show-fps-style", "x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9");
+			//阻止egretDiv拖动(阻止黑色下拉)
+			// egretDiv.addEventListener("touchmove", function (e) { e.preventDefault(); });
+			b.insertBefore(egretDiv, b.firstChild);
+			// 阻止body拖动(阻止黑色下拉)
+			b.addEventListener("touchmove", function (e) { e.preventDefault(); });
+			b = null;
+			return egretDiv;
+		})();
+
+
+		window.inTime = new Date().getTime();
+		//重写iframe
+		function overwriteIframe(type, content) {
+			var iframe = document.createElement("iframe");
+			iframe.style.display = "none";
+			iframe.src = "data:text/plain,";
+			document.documentElement.appendChild(iframe);
+			result = window.frames[0].window[type](content);
+			iframe.parentNode.removeChild(iframe);
+			return result;
+		}
+
+		//加载script
+		function loadScript(src, callback) {
+			var scrpit = document.createElement("script");
+			scrpit.async = false;
+			scrpit.src = src;
+			var evtName = null;
+			var evtListener = null;
+			function logic() {
+				scrpit.parentNode.removeChild(scrpit);
+				scrpit.removeEventListener(evtName, evtListener, false);
+				callback && callback();
+			}
+			if (!-[1,]) {
+				evtName = "readystatechange";
+				evtListener = function () { if (this.readyState == "loaded" || this.readyState == "compvare") logic(); }
+			} else {
+				evtName = "load";
+				evtListener = logic;
+			}
+			scrpit.addEventListener(evtName, evtListener, false);
+			document.body.appendChild(scrpit);
+		}
+		//重写alert
+		window.alert = function (content) { overwriteIframe("alert", content); }
+		//重写confirm
+		window.confirm = function (content) { return overwriteIframe("confirm", content); }
+		//监听微信初始化完成再初始化音频流
+		document.addEventListener("WeixinJSBridgeReady", function () {
+			var audioList = document.getElementsByTagName("audio");
+			for (var i = 0, len = audioList.length; i < len; i++) {
+				var audio = audioList[i];
+				audio.play();
+				audio.pause();
+			}
+			window.mediaReady = true;
+			document.dispatchEvent(new Event("mediaReady"));
+		});
+		//域名
+		var hostname = window.location.hostname;
+		//前端根目录
+		var pathname = window.location.pathname.split("main.html")[0];
+		//资源地址头
+		window.mediaPath = "";
+		//代码地址头
+		window.codePath = "";
+		//根据域名不同配置不同的加载方式
+		switch (hostname) {
+			//如果是game域或者是嘿柿域
+			case "game.flyh5.cn":
+			case "www.flyh6.cn":
+				window.mediaPath = "http://img.fly" + hostname.split("fly")[1] + pathname.split("resources")[1];
+				window.codePath = "https://" + hostname + pathname;
+				break;
+			//如果是**域
+			case "**":
+				break;
+		}
+		//web配置地址
+		window.webfestUrl = "http://game.flyh5.cn/game/wx7c3ed56f7f792d84/data_system/api.php?a=web";
+		//web配置标识
+		window.webfestParam = "2Vi7kc9K99nW2D1pX97";
+		//初始化web配置
+		function initWebfest(json) {
+			console.log(2);
+			if (!json) { alert("response is undefined"); return; }
+
+			if (json.error != 100) { alert(json.info); return; }
+
+			var data = json.data;
+			if (!data) { alert("data is undefined"); return; }
+
+			if (data.status != 200) { alert(json.info); return; }
+
+			if (!data.content) { alert("content is undefined"); return; }
+
+			if (!data.content.info) { alert("data error"); return; }
+
+			//web配置列表
+			var webfest = JSON.parse(decodeURIComponent(data.content.info));
+			// alert(JSON.stringify(webfest));
+			//项目标题
+			document.title = webfest.docTitle;
+			//分享标题
+			window.shareTitle = webfest.shareTitle;
+			//分享内容
+			window.shareDesc = webfest.shareContent;
+			//分享图片
+			window.shareImgUrl = webfest.shareImg;
+			// //上线时间戳
+			// window.onlineTimestamp = new Date(webfest["online-date"] ? webfest["online-date"].replace(/-/g, "/") : "2019/03/01 00:00:00").getTime() / 1000;
+			// //下线时间戳
+			// window.offlineTimestamp = new Date(webfest["offline-date"] ? webfest["offline-date"].replace(/-/g, "/") : "2019/12/31 00:00:00").getTime() / 1000;
+			//当前时间戳
+			window.nowTimestamp = sessionStorage["timestamp"] || new Date().getTime() / 1000;
+			//资源版本
+			window.sourceVer = "?v=" + webfest.res_ver;
+			//背景音乐
+			window.bgmUrl = webfest.res_music;
+			//自定义配置
+			window.customFest = webfest.custom;
+			//公式配置
+			window.formulaFest = webfest.formula;
+		}
+		//web配置加载完成后回调
+		window.webfestCallback = function (json) {
+			initWebfest(json);
+			console.log(3);
+			var codePath = window.codePath;
+			var mediaPath = window.mediaPath;
+			var ver = window.sourceVer;
+			//加载前端公共库
+			loadScript(codePath + "resource/js/mode/common-0.2.0.js" + ver, function () {
+				console.log(4);
+				//
+				document.getElementById("bgm").src = replaceFlyH5CDN(window.bgmUrl);
+				//加载egret的script列表
+				doGET(codePath + "manifest.json" + ver, "", function (json) {
+					console.log(5);
+					var list = json.initial.concat(json.game);
+					var index = 0;
+					function loadNext() {
+
+						loadScript(codePath + list[index] + ver, function () {
+							index++;
+							if (index < list.length) { loadNext(); return; }
+							/**
+							 * {
+							 * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
+							 * "audioType": 0 //使用的音频类型，0:默认，1:qq audio，2:web audio，3:audio
+							 * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
+							 * "calculateCanvasScaleFactor": //a function return canvas scale factor
+							 * }
+							 **/
+							console.log(6);
+							var renderMode = checkIDE(/IPhone/i, "iphone") ? window.iosRenderMode : window.androidRenderMode;
+							egret.runEgret({
+								renderMode: renderMode, audioType: 0, antialias: false, calculateCanvasScaleFactor: function (context) {
+									var backingStore =
+										context.webkitBackingStorePixelRatio ||
+										context.mozBackingStorePixelRatio ||
+										context.msBackingStorePixelRatio ||
+										context.oBackingStorePixelRatio ||
+										context.backingStorePixelRatio ||
+										1;
+									return (window.devicePixelRatio || 1) / backingStore;
+								}
+							});
+						})
+					}
+					loadNext();
+				}, this, 1);
+				//加载前端配置
+				loadScript(codePath + "resource/js/mode/mainfest.js" + ver, function () {
+					//分享地址
+					window.shareUrl = window.location.href;
+					//如果需要授权
+					if (window.auth) {
+						//如果是微信
+						if (checkIDE(/MicroMessenger/i, "micromessenger")) {
+							//如果没有openid
+							// if (!sessionStorage["openid"]) {
+							// 	window.location.replace(window.authUrl);
+							// }
+							window.shareUrl = window.authUrl;
+						}
+						//如果链接上没有时间戳
+						if (!getQueryString("date")) {
+							var urls = window.location.href.split("?");
+							window.location.replace(urls[0] + "?date=" + new Date().getTime() + "&" + urls[1]);
+						}
+					}
+					//加载前端样式
+					loadCSS(mediaPath + "resource/css/common-0.0.1.css" + ver, function () {
+						//加载前端初始化逻辑
+						loadScript(codePath + "resource/js/mode/main.js" + ver);
+					});
+				});
+			});
+		}
+
+		/** 请求web配置 */
+		var request = new XMLHttpRequest();
+		request.open("POST", window.webfestUrl, false);
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		request.addEventListener("load", function (e) {
+			if (request.status != 200) { console.warn("请求失败！请检查参数是否错误！"); return; }
+
+			try { window.webfestCallback.call(this, JSON.parse(request.response.trim())); }
+			catch (e) { console.warn(e); window.webfestCallback.call(this, request.response); }
+		});
+		request.send("&code=" + window.webfestParam);
+	</script>
+<script type="text/javascript">
+		function clickIndex(index) {
+			console.log("index", index);
+			window.parent.showIndex(index);
+		}
+
+		function loadingOk() {
+			// console.log("loadingOk");
+			// window.parent.loadingOk();
+		}
+</script>
+<!--MtaH5_start-->
+
+<!--MtaH5_end-->
+
+</body>
+
+</html>

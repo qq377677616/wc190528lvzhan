@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>绿展集团</title>
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/animate.min.css" />
+  <link rel="stylesheet" href="../css/default.css" />
+  <link href="../images/logo.ico" type="image/x-icon" rel="shortcut icon">
+  <script src="../js/jquery-3.3.1.js"></script>
+</head>
+<body style="overflow:hidden;">
+  <div id="project" class="body">
+    <div id="head" class="white"></div>
+    <div class="content">
+      <canvas id="canvas"></canvas>
+      <div class="con">
+        <ul class="flex-aro">
+          <!-- <li><div class="img">
+            <div class="top"><div class="box"></div><div class="img">工业互联网与高端装备</div></div>
+            <div class="bottom"><div class="box"></div></div>
+          </li>
+          <li><div class="img">
+            <div class="top"><div class="box"></div><div class="img">人工智能与大数据</div></div>
+            <img class="base" src="../images/img_00.png" alt="" /></div>
+          </li>
+          <li><div class="img">
+            <div class="top"><div class="box"></div><div class="img">新能源与新材料</div></div>
+            <img class="base" src="../images/img_00.png" alt="" /></div>
+          </li>
+          <li><div class="img">
+            <div class="top"><div class="box"></div><div class="img">大健康与生物技术</div></div> 
+            <img class="base" src="../images/img_00.png" alt="" /></div>
+          <li><div class="img">
+            <div class="top"><div class="box"></div><div class="img">文创类</div></div>
+            <img class="base" src="../images/img_00.png" alt="" /></div>
+          </li> -->
+        </ul>
+        <dl>
+          <!-- <dd>
+            <div class="text flex-cen"><div class="close"></div><div>
+              <h3>工业互联网与高端装备</h3>
+              <p>来自西班牙的工业4.0 预维护系统<br/>
+                来自美国的新兴激光雷达传感器技术<br/>
+                来自德国的工业物联网无线传输方案<br/>
+                来自美国的边缘计算解决方案<br/>
+                来自以色列的物联网安全项目<br/>
+                来自西班牙的自供电工业眼系统<br/>
+                来自俄罗斯的工业无人机项目
+              </p>
+            </div></div>
+          </dd>
+          <dd>
+            <div class="text flex-cen"><div class="close"></div><div>
+              <h3>人工智能与大数据</h3>
+              <p>来自美国的人工智能信息检索项目<br/>
+                来自美工的家庭智能看护系统<br/>
+                来自美国的便携空气净化器项目<br/>
+                来自荷兰的睡眠机器人项目<br/>
+                来自美国的移动手持毒品、药物智能检测仪项目<br/>
+                来自美工的人体3D扫描项目<br/>
+                来自德国的车载AR实景导航项目<br/>
+                来自西班牙的手机系统资源优化方案<br/>
+                来自美国的FPGA 数据库加速方案
+              </p>
+            </div></div>
+          </dd>
+          <dd>
+            <div class="text flex-cen"><div class="close"></div><div>
+              <h3>新能源与新材料</h3>
+              <p>来自斯洛伐克的能源钻探项目<br/>
+                来自加拿大的二氧化碳再利用项目<br/>
+                来自荷兰的特种炭黑项目<br/>
+                来自美国的聚四氟乙烯材料应用项目
+              </p>
+            </div></div>
+          </dd>
+          <dd>
+            <div class="text flex-cen"><div class="close"></div><div>
+              <h3>大健康与生物技术</h3>
+              <p>来自瑞士的质子治疗设备项目<br/>
+                 来自日本的小分子蛋白肽项目
+              </p>
+            </div></div>
+          </dd>
+          <dd>
+            <div class="text flex-cen"><div class="close"></div><div>
+              <h3>文创类</h3>
+              <p>来自美国的大数据互动音乐内容平台<br/>
+                 来自上海的天空旅馆科幻谷项目
+              </p>
+            </div></div>
+          </dd> -->
+        </dl>
+      </div>
+    </div>
+    <div id="footer"></div>  
+  </div>
+  <script src="../js/three.min.js"></script>
+  <script src="../js/require.js" data-main="../js/myrequire.js"></script> 
+
+    <script>
+
+      var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+
+      var container;
+      var camera, scene, renderer;
+
+      var particles, particle, count = 0;
+
+      var mouseX = -153, mouseY = -870;
+
+      var windowHalfX = window.innerWidth / 2;
+      var windowHalfY = window.innerHeight / 2;
+      setTimeout(function(){init();}, 3600);
+      animate();
+
+      function init() {
+
+        container = document.getElementsByClassName("content")[0];
+        // container = document.createElement( 'div' );
+        // document.body.appendChild( container );
+
+        camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+        camera.position.z = 1000;
+
+        scene = new THREE.Scene();
+
+        particles = new Array();
+
+        var PI2 = Math.PI * 2;
+        var material = new THREE.ParticleCanvasMaterial( {
+
+          color: 0x43E7E0,
+          program: function ( context ) {
+
+            context.beginPath();
+            context.arc( 0, 0, 1, 0, PI2, true );
+            context.fill();
+
+          }
+
+        } );
+
+        var i = 0;
+
+        for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+          for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+            particle = particles[ i ++ ] = new THREE.Particle( material );
+            particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+            particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+            scene.add( particle );
+
+          }
+
+        }
+
+        renderer = new THREE.CanvasRenderer();
+        renderer.setSize( window.innerWidth, window.innerHeight );
+        container.appendChild( renderer.domElement );
+
+        //document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+        document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+        document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+        //
+
+        window.addEventListener( 'resize', onWindowResize, false );
+
+      }
+
+      function onWindowResize() {
+
+        windowHalfX = window.innerWidth / 2;
+        windowHalfY = window.innerHeight / 2;
+
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+
+        renderer.setSize( window.innerWidth, window.innerHeight );
+
+      }
+
+      //
+
+      function onDocumentMouseMove( event ) {
+
+        mouseX = event.clientX - windowHalfX;
+        mouseY = event.clientY - windowHalfY;
+
+      }
+
+      function onDocumentTouchStart( event ) {
+
+        if ( event.touches.length === 1 ) {
+
+          event.preventDefault();
+
+          mouseX = event.touches[ 0 ].pageX - windowHalfX;
+          mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+        }
+
+      }
+
+      function onDocumentTouchMove( event ) {
+
+        if ( event.touches.length === 1 ) {
+
+          event.preventDefault();
+
+          mouseX = event.touches[ 0 ].pageX - windowHalfX;
+          mouseY = event.touches[ 0 ].pageY - windowHalfY;
+
+        }
+
+      }
+
+      //
+
+      function animate() {
+
+        requestAnimationFrame( animate );
+
+        render();
+
+
+      }
+
+      function render() {
+        if(!camera) {return;}
+        camera.position.x += ( mouseX - camera.position.x ) * .05;
+        camera.position.y += ( - mouseY - camera.position.y ) * .05;
+        camera.lookAt( scene.position );
+
+        var i = 0;
+
+        for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+
+          for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+
+            particle = particles[ i++ ];
+            particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+            particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 2 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 2;
+
+          }
+
+        }
+
+        renderer.render( scene, camera );
+
+        count += 0.1;
+
+      }
+
+    </script>   
+</body> 
+</html>

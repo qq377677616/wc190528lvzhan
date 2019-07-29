@@ -1,0 +1,308 @@
+{
+	"groups": [
+		{
+			"keys": "dft_json,dft_music_stop_png,dft_music_play_png",
+			"name": "default"
+		},
+		{
+			"keys": "loading_bg_jpg",
+			"name": "loading"
+		},
+		{
+			"keys": "ewm_png,1_png,2_png,3_png,4_png,5_png,6_png,7_png,quan_1_png,quan_2_png,quan_3_png,quan_4_png,quan_5_png,quan_6_png,quan_7_png,quan_8_png,quan_9_png,quan_10_png,quan_11_png,quan_12_png,quan_13_png,quan_14_png,quan_15_png,quan_16_png,quan_17_png,quan_18_png,quan_19_png,quan_20_png,quan_21_png,quan_22_png,quan_23_png,quan_24_png,quan_25_png,quan_26_png,name_1_png,name_2_png,name_3_png,name_4_png,name_5_png,name_6_png,name_7_png,name_8_png,name_9_png,8_png,9_png,name_10_png,10_png",
+			"name": "preload"
+		},
+		{
+			"keys": "",
+			"name": "preload2"
+		},
+		{
+			"keys": "",
+			"name": "preload3"
+		},
+		{
+			"keys": "",
+			"name": "preload4"
+		},
+		{
+			"keys": "",
+			"name": "preload5"
+		},
+		{
+			"keys": "",
+			"name": "preload6"
+		},
+		{
+			"keys": "",
+			"name": "preload7"
+		}
+	],
+	"resources": [
+		{
+			"url": "assets/loading/loading_bg.jpg",
+			"type": "image",
+			"name": "loading_bg_jpg"
+		},
+		{
+			"url": "assets/ewm.png",
+			"type": "image",
+			"name": "ewm_png"
+		},
+		{
+			"url": "assets/btn_1.mp3",
+			"type": "sound",
+			"name": "btn_1_mp3"
+		},
+		{
+			"url": "assets/default/dft.json",
+			"type": "sheet",
+			"name": "dft_json",
+			"subkeys": "dft_bgm_ico,dft_bgm_main,dft_com_adr,dft_com_ios_1,dft_com_ios_10,dft_com_ios_11,dft_com_ios_2,dft_com_ios_3,dft_com_ios_4,dft_com_ios_5,dft_com_ios_6,dft_com_ios_7,dft_com_ios_8,dft_com_ios_9,dft_hand,dft_ios_hint,dft_ori_ico"
+		},
+		{
+			"url": "assets/default/dft_music_stop.png",
+			"type": "image",
+			"name": "dft_music_stop_png"
+		},
+		{
+			"url": "assets/default/dft_music_play.png",
+			"type": "image",
+			"name": "dft_music_play_png"
+		},
+		{
+			"url": "assets/loading.mp3",
+			"type": "sound",
+			"name": "loading_mp3"
+		},
+		{
+			"name": "1_png",
+			"type": "image",
+			"url": "assets/index/1.png"
+		},
+		{
+			"name": "2_png",
+			"type": "image",
+			"url": "assets/index/2.png"
+		},
+		{
+			"name": "3_png",
+			"type": "image",
+			"url": "assets/index/3.png"
+		},
+		{
+			"name": "4_png",
+			"type": "image",
+			"url": "assets/index/4.png"
+		},
+		{
+			"name": "5_png",
+			"type": "image",
+			"url": "assets/index/5.png"
+		},
+		{
+			"name": "6_png",
+			"type": "image",
+			"url": "assets/index/6.png"
+		},
+		{
+			"name": "7_png",
+			"type": "image",
+			"url": "assets/index/7.png"
+		},
+		{
+			"name": "quan_1_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_1.png"
+		},
+		{
+			"name": "quan_2_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_2.png"
+		},
+		{
+			"name": "quan_3_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_3.png"
+		},
+		{
+			"name": "quan_4_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_4.png"
+		},
+		{
+			"name": "quan_5_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_5.png"
+		},
+		{
+			"name": "quan_6_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_6.png"
+		},
+		{
+			"name": "quan_7_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_7.png"
+		},
+		{
+			"name": "quan_8_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_8.png"
+		},
+		{
+			"name": "quan_9_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_9.png"
+		},
+		{
+			"name": "quan_10_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_10.png"
+		},
+		{
+			"name": "quan_11_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_11.png"
+		},
+		{
+			"name": "quan_12_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_12.png"
+		},
+		{
+			"name": "quan_13_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_13.png"
+		},
+		{
+			"name": "quan_14_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_14.png"
+		},
+		{
+			"name": "quan_15_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_15.png"
+		},
+		{
+			"name": "quan_16_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_16.png"
+		},
+		{
+			"name": "quan_17_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_17.png"
+		},
+		{
+			"name": "quan_18_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_18.png"
+		},
+		{
+			"name": "quan_19_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_19.png"
+		},
+		{
+			"name": "quan_20_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_20.png"
+		},
+		{
+			"name": "quan_21_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_21.png"
+		},
+		{
+			"name": "quan_22_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_22.png"
+		},
+		{
+			"name": "quan_23_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_23.png"
+		},
+		{
+			"name": "quan_24_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_24.png"
+		},
+		{
+			"name": "quan_25_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_25.png"
+		},
+		{
+			"name": "quan_26_png",
+			"type": "image",
+			"url": "assets/index/quan/quan_26.png"
+		},
+		{
+			"name": "name_1_png",
+			"type": "image",
+			"url": "assets/index/name_1.png"
+		},
+		{
+			"name": "name_2_png",
+			"type": "image",
+			"url": "assets/index/name_2.png"
+		},
+		{
+			"name": "name_3_png",
+			"type": "image",
+			"url": "assets/index/name_3.png"
+		},
+		{
+			"name": "name_4_png",
+			"type": "image",
+			"url": "assets/index/name_4.png"
+		},
+		{
+			"name": "name_5_png",
+			"type": "image",
+			"url": "assets/index/name_5.png"
+		},
+		{
+			"name": "name_6_png",
+			"type": "image",
+			"url": "assets/index/name_6.png"
+		},
+		{
+			"name": "name_7_png",
+			"type": "image",
+			"url": "assets/index/name_7.png"
+		},
+		{
+			"name": "name_8_png",
+			"type": "image",
+			"url": "assets/index/name_8.png"
+		},
+		{
+			"name": "name_9_png",
+			"type": "image",
+			"url": "assets/index/name_9.png"
+		},
+		{
+			"name": "8_png",
+			"type": "image",
+			"url": "assets/index/8.png"
+		},
+		{
+			"name": "9_png",
+			"type": "image",
+			"url": "assets/index/9.png"
+		},
+		{
+			"name": "name_10_png",
+			"type": "image",
+			"url": "assets/index/name_10.png"
+		},
+		{
+			"name": "10_png",
+			"type": "image",
+			"url": "assets/index/10.png"
+		}
+	]
+}
